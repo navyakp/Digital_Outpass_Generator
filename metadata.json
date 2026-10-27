@@ -1,0 +1,7 @@
+{
+  "name": "Copy of Outpass - Digital Outpass System",
+  "description": "A smart digital outpass generator for institutions and dormitories. Features AI-powered request validation using Gemini, QR code generation for secure verification, and a comprehensive dashboard for tracking movement.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}

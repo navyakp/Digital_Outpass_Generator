@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Reset Users - Outpass System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            text-align: center;
+            max-width: 400px;
+        }
+        h1 { color: #333; margin-bottom: 20px; }
+        button {
+            background: #dc3545;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+        }
+        button:hover { background: #c82333; }
+        .success { color: #28a745; font-weight: bold; margin-top: 20px; }
+        .info { color: #666; margin: 20px 0; font-size: 14px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🗑️ Reset User Data</h1>
+        <p class="info">This will delete all student and warden records from local storage.</p>
+        <button onclick="resetUsers()">Delete All Users</button>
+        <button onclick="window.location.href='http://localhost:5173'" style="background: #007bff;">Go to App</button>
+        <div id="message"></div>
+    </div>
+
+    <script>
+        function resetUsers() {
+            try {
+                localStorage.removeItem('outpass_users');
+                localStorage.removeItem('outpass_user');
+                document.getElementById('message').innerHTML = '<p class="success">✓ All user records deleted successfully!<br>Refresh the app to see default users re-seeded.</p>';
+            } catch (error) {
+                document.getElementById('message').innerHTML = '<p style="color: red;">Error: ' + error.message + '</p>';
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Outpass - Digital Outpass System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+            colors: {
+              brand: {
+                50: '#eff6ff',
+                100: '#dbeafe',
+                500: '#3b82f6',
+                600: '#2563eb',
+                700: '#1d4ed8',
+                900: '#1e3a8a',
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        /* User's uploaded image should be named background.jpg */
+        background-image: url('background.jpg');
+        background-size: cover;
+        background-position: center center;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        min-height: 100vh;
+        background-color: #0f172a; /* Darker slate fallback */
+      }
+      
+      /* Add a sophisticated overlay to ensure content pops against the busy campus background */
+      body::after {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        /* Linear gradient from semi-transparent slate to darker slate at bottom */
+        background: linear-gradient(
+          to bottom,
+          rgba(15, 23, 42, 0.3) 0%,
+          rgba(15, 23, 42, 0.5) 50%,
+          rgba(15, 23, 42, 0.8) 100%
+        );
+        z-index: -1;
+        /* Slight blur to simulate depth of field and improve readability */
+        backdrop-filter: blur(2px);
+      }
+
+      /* Custom scrollbar for aesthetics */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: rgba(241, 241, 241, 0.1); 
+      }
+      ::-webkit-scrollbar-thumb {
+        background: rgba(203, 213, 225, 0.5); 
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: rgba(148, 163, 184, 0.8); 
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "qrcode.react": "https://aistudiocdn.com/qrcode.react@^4.2.0",
+    "html5-qrcode": "https://aistudiocdn.com/html5-qrcode@^2.3.8",
+    "uuid": "https://aistudiocdn.com/uuid@^13.0.0",
+    "date-fns": "https://aistudiocdn.com/date-fns@^4.1.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
